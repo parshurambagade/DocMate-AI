@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { v4 as uuidv4 } from "uuid"
 
 export default function Page() {
-  const [chatId, setChatId] = useState(localStorage.getItem("chatId"))
+  const [chatId, setChatId] = useState<string | null>(null)
 
   useEffect(() => {
     if (!chatId) {
@@ -15,7 +15,7 @@ export default function Page() {
       }, 0)
     }
   }, [])
-  
+
   console.log(chatId)
   return (
     <div className="flex min-h-svh p-6">
